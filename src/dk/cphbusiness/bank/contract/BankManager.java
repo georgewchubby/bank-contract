@@ -15,6 +15,8 @@ public interface BankManager {
   
   Collection<CustomerSummary> listCustomers();
   
+  Collection<AccountSummary> listAccounts();
+  
   Collection<AccountSummary> listCustomerAccounts(CustomerIdentifier customer);
 
   AccountDetail transferAmount(
