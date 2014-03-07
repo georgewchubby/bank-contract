@@ -2,7 +2,6 @@ package dk.cphbusiness.bank.contract;
 
 import dk.cphbusiness.bank.contract.eto.CustomerBannedException;
 import dk.cphbusiness.bank.contract.eto.NoSuchCustomerException;
-import dk.cphbusiness.bank.contract.eto.ExistingCustomerException;
 import dk.cphbusiness.bank.contract.dto.CustomerDetail;
 import dk.cphbusiness.bank.contract.eto.TransferNotAcceptedException;
 import dk.cphbusiness.bank.contract.eto.NoSuchAccountException;
@@ -34,8 +33,10 @@ public interface BankManager {
   
   AccountDetail showAccountHistory(AccountIdentifier account);
   
-  CustomerDetail saveCustomer(CustomerDetail customer) throws ExistingCustomerException;
+  CustomerDetail saveCustomer(CustomerDetail customer);
 
+  CustomerDetail showCustomer(CustomerIdentifier customer) throws NoSuchCustomerException;
+  
   AccountDetail createAccount(
       CustomerIdentifier customer,
       AccountDetail account
