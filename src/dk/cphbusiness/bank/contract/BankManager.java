@@ -1,5 +1,9 @@
 package dk.cphbusiness.bank.contract;
 
+import dk.cphbusiness.bank.contract.eto.CustomerBannedException;
+import dk.cphbusiness.bank.contract.eto.NoSuchCustomerException;
+import dk.cphbusiness.bank.contract.eto.ExistingCustomerException;
+import dk.cphbusiness.bank.contract.dto.CustomerDetail;
 import dk.cphbusiness.bank.contract.eto.TransferNotAcceptedException;
 import dk.cphbusiness.bank.contract.eto.NoSuchAccountException;
 import dk.cphbusiness.bank.contract.eto.InsufficientFundsException;
@@ -29,5 +33,12 @@ public interface BankManager {
       InsufficientFundsException;
   
   AccountDetail showAccountHistory(AccountIdentifier account);
+  
+  CustomerDetail saveCustomer(CustomerDetail customer) throws ExistingCustomerException;
 
+  AccountDetail createAccount(
+      CustomerIdentifier customer,
+      AccountDetail account
+      ) throws NoSuchCustomerException, CustomerBannedException;
+  
   }
