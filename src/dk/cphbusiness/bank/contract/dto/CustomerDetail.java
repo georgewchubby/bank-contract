@@ -32,6 +32,10 @@ public class CustomerDetail extends CustomerIdentifier {
     this.email = email;
     }
 
+  public CustomerDetail(String cpr) {
+    super(cpr);
+    }
+    
   public String getTitle() {
     return title;
     }

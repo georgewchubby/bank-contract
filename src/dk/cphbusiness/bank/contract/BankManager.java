@@ -22,6 +22,8 @@ public interface BankManager {
   
   Collection<AccountSummary> listCustomerAccounts(CustomerIdentifier customer);
 
+  Collection<String> listAccountTypes();
+  
   AccountDetail transferAmount(
       BigDecimal amount,
       AccountIdentifier source,
