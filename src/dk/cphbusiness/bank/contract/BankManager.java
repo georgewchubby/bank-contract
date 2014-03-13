@@ -13,8 +13,12 @@ import dk.cphbusiness.bank.contract.dto.CustomerIdentifier;
 import dk.cphbusiness.bank.contract.dto.CustomerSummary;
 import java.math.BigDecimal;
 import java.util.Collection;
+import javax.ejb.Remote;
 
+@Remote
 public interface BankManager {
+  
+  String sayHello(String name);
   
   Collection<CustomerSummary> listCustomers();
   
