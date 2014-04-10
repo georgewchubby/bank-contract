@@ -48,4 +48,6 @@ public interface BankManager {
       AccountDetail account
       ) throws NoSuchCustomerException, CustomerBannedException;
   
+   boolean doesUserExist(CustomerIdentifier ci);
+
   }
